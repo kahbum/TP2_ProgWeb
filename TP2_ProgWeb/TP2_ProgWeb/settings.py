@@ -28,7 +28,7 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = {
-    '/home/tiago/git/TP2_ProgWeb/TP2_ProgWeb/templates'
+    os.path.join(BASE_DIR, 'templates')
 }
 
 # Application definition

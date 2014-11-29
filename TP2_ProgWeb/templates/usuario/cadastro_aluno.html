@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+  	<title>Formulário de Cadastro</title>
+      <meta charset="UTF-8">
+      
+  	  <script src="http://code.jquery.com/jquery.js"></script>
+      <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+      <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+      <script type="text/javascript">
+	    function redirecionar(){
+	      window.location="/";
+	    }
+	  </script>
+  </head>
+  <body>
+    <form class="form-horizontal" role="form" action="/cadastrar_aluno/" method="post">{% csrf_token %}
+      <fieldset>
+
+        <!-- Form Name -->
+        <legend>Formulário de Cadastro</legend>
+
+        <p class="help-block">* Campo Obrigatório</p>
+        <br/>
+        <!-- Text input-->
+        <div class="control-group">
+          <label class="control-label">Nome*</label>
+          <div class="controls">
+            <input id="nome" name="nome" type="text" placeholder="Insira seu nome" class="input-xlarge" required>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Número de Matrícula*</label>
+          <div class="controls">
+            <input id="mat" name="mat" type="text" placeholder="Insira seu número de matrícula" class="input-xlarge" required>
+          </div>
+        </div>
+
+
+        <div class="control-group">
+          <label class="control-label">Email*</label>
+          <div class="controls">
+            <input id="email" name="email" type="email" placeholder="Exemplo: example@example.com" class="input" required>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Nova senha</label>
+          <div class="controls">
+            <input id="novasenha" name="novasenha" type="password" placeholder="Confirme sua senha" class="input" required>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label">Confirmar senha</label>
+          <div class="controls">
+            <input id="confirmanovasenha" name="confirmanovasenha" type="password" placeholder="Confirme sua nova senha" class="input" required>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <label class="control-label"></label>
+          <div class="controls">
+            <button id="cancelar" name="cancelar" class="btn btn-primary" type="button" onclick="redirecionar();">Cancelar</button> <!-- redirecionar para a página do perfil -->
+            <button id="concluir" name="concluir" class="btn btn-primary" type="submit">Concluir</button>
+          </div>
+        </div>
+
+      </fieldset>
+    </form>
+
+</body>
+</html>

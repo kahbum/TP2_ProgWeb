@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <title>Signin</title>
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'signin.css' %}" rel="stylesheet">
+    
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+    <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript">
+    function redirecionar(){
+      window.location="/";
+    }
+    </script>
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <form class="form-signin" role="form" action="/verificar_email/" method="post">{% csrf_token %}
+        <h1 class="form-signin-heading">Confirme o email</h1>
+        <p><font color="#FF0000">Email inválido! Insira um email válido.</font></p>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="inputEmail" name="inputEmail" class="form-control" placeholder="Email" required autofocus>
+     	<br><br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Confirma</button>
+        <button class="btn btn-lg btn-primary btn-block" type="button" onclick="redirecionar();">Voltar</button>
+      </form>
+
+    </div> <!-- /container -->
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
