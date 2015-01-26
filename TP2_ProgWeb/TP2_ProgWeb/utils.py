@@ -4,7 +4,7 @@ def sendPassword(email, password):
     SMTP_PORT = 587
 
     admin_sender = 'tp2.progweb@gmail.com'
-    admin_password = 'fib12358'
+    admin_password = '********'
     recipient = email
     subject = 'Primeiro acesso: senha inicial'
     body = 'Para acessar o sistema utilize os seguintes dados:<br/>'
